@@ -46,7 +46,7 @@ public class ListingsController {
   		List<String> list = svc.listCountry();
   		model.addAttribute("list", list);
   		model.addAttribute("search", new Search());
-  		return "view0.html";
+  		return "view1.html";
  }
 
 
@@ -60,7 +60,7 @@ public class ListingsController {
 
 		if (result.hasErrors()) {
 			model.addAttribute("errorMsg", "Incorrect search fields!");
-			return "view0.html";
+			return "view1.html";
 		}
 
 		// display appropriate message if the search returns no accommodation
@@ -72,12 +72,6 @@ public class ListingsController {
 		return "view2.html";
 	}
 
-
-	// @GetMapping(path = "/searched")
-    // public String redirect(@RequestParam String country, @RequestParam Integer person, @RequestParam Integer min, @RequestParam Integer max, Model model, List<Document> list) {
-
-    //     return "redirect:/search" + country + person + min + max;
-    // }
 
 	//TODO: Task 4
 	@GetMapping(value="search/{id}")
