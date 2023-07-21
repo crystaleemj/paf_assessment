@@ -34,13 +34,21 @@ public class ListingsController {
 
 	// writing the landing page controller
 	//TODO: Task 2
+	// @GetMapping()
+	// public String landingPage(Model model) {
+	// 	List<String> list = svc.listCountry();
+	// 	model.addAttribute("list", list);
+	// 	return "view1.html";
+	// }
+
 	@GetMapping()
-	public String landingPage(Model model) {
-		List<String> list = svc.listCountry();
-		model.addAttribute("list", list);
-		return "view1.html";
-	}
-	
+ 	public String landingPage(Model model) {
+  		List<String> list = svc.listCountry();
+  		model.addAttribute("list", list);
+  		model.addAttribute("search", new Search());
+  		return "view0.html";
+ }
+
 
 
 	// TODO: Task 3
@@ -52,7 +60,7 @@ public class ListingsController {
 
 		if (result.hasErrors()) {
 			model.addAttribute("errorMsg", "Incorrect search fields!");
-			return "view1.html";
+			return "view0.html";
 		}
 
 		// display appropriate message if the search returns no accommodation
