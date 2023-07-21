@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table name="list" th:field="*{list}">
+        <tr>
+          <th>Name</th>
+          <th>Price</th>
+          <th>Image</th>
+          <th>More Details</th>
+        </tr>
+        <tr th:each="hotel : ${list}">
+          <td th:text="*{hotel.address}"></td>
+          <td th:text="*{hotel.price}"></td>
+          <td th:text="*{hotel.image}"></td>
+          <td><button><a href="*{hotel.id}" name="id" action="/search/*{hotel.id}">Details</a></button></td>
+        </tr>
+      </table>
+</body>
+</html>

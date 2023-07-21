@@ -1,0 +1,1 @@
+mongoimport -hlocalhost:27017 -dbooking -clistings --jsonArray --type=json listing.json

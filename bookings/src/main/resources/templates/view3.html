@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table name="listingDetail" th:field="*{listingDetail}">
+        <tr>
+          <th>Id:</th>
+          <th>Description</th>
+          <th>Address</th>
+          <th>Price</th>
+          <th>Amenities</th>
+        </tr>
+        <tr>
+          <td th:text="*{listingDetail.id}"></td>
+          <td th:text="*{listingDetail.description}"></td>
+          <td th:text="*{listingDetail.address}"></td>
+          <td th:text="*{listingDetail.price}"></td>
+          <td th:text="*{listingDetail.amenities}"></td>
+          
+        </tr>
+      </table>
+
+      <form action="" method="post">
+        <p>Name:</p><input type="text">
+        <p>Email:</p><input type="text">
+        <p>Arrival:</p><input type="date">
+        <p>Stay:</p><input type="number">
+
+        <button type="button" action="/">Return</button>
+      </form>
+
+     
+</body>
+</html>
